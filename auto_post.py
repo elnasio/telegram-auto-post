@@ -9,17 +9,18 @@ TAGS = ['android', 'ios', 'flutter']
 
 def ambil_berita():
     tag = random.choice(TAGS)
-    url = f"https://dev.to/api/articles?tag={tag}&top=1"
+    url = f"https://dev.to/api/articles?tag={tag}&per_page=5"
     try:
         res = requests.get(url)
         res.raise_for_status()
         data = res.json()
         if not data:
             return f"Tidak ada artikel ditemukan untuk tag: {tag}"
-        artikel = data[0]
+        artikel = random.choice(data)
         return f"📰 {artikel['title']}\n{artikel['url']}"
     except Exception as e:
         return f"Gagal mengambil berita: {e}"
+
 
 def kirim_pesan(teks):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
