@@ -11,18 +11,18 @@ Bot ini berjalan 100% gratis di **GitHub Actions**, tanpa perlu server, dan bisa
 ✅ Otomatis jalan tiap hari (jam 9 pagi WIB)  
 ✅ Bisa kirim manual lewat tombol `Run workflow`  
 ✅ Tanpa biaya, tanpa hosting, tanpa ribet  
-✅ Mudah diubah untuk topik atau komunitas lain  
+✅ Mudah diubah untuk topik atau komunitas lain
 
 ---
 
 ## 📰 Sumber Berita yang Digunakan
 
-| Sumber        | Topik     | Format  | Status |
-|---------------|-----------|---------|--------|
-| 🟢 [Dev.to](https://dev.to)        | Android, iOS, Flutter | JSON API | ✅ aktif |
-| 🟠 [Hacker News](https://hn.algolia.com/api)   | Umum, Mobile, Tools | JSON API | ✅ aktif |
-| 🔵 [Medium - Flutter](https://medium.com/feed/flutter) | Flutter | RSS → JSON | ✅ aktif |
-| 🔴 [Reddit r/androiddev](https://www.reddit.com/r/androiddev) | Android | RSS → JSON | ✅ aktif |
+| Sumber                                                        | Topik                 | Format     | Status   |
+| ------------------------------------------------------------- | --------------------- | ---------- | -------- |
+| 🟢 [Dev.to](https://dev.to)                                   | Android, iOS, Flutter | JSON API   | ✅ aktif |
+| 🟠 [Hacker News](https://hn.algolia.com/api)                  | Umum, Mobile, Tools   | JSON API   | ✅ aktif |
+| 🔵 [Medium - Flutter](https://medium.com/feed/flutter)        | Flutter               | RSS → JSON | ✅ aktif |
+| 🔴 [Reddit r/androiddev](https://www.reddit.com/r/androiddev) | Android               | RSS → JSON | ✅ aktif |
 
 ---
 
@@ -58,17 +58,20 @@ Kirim ke Grup Telegram via Bot API
 ## 🪜 Step-by-Step Setup Guide
 
 ### 1. 🧠 Buat Bot Telegram
+
 - Buka [@BotFather](https://t.me/BotFather)
 - Kirim: `/newbot` → beri nama & username
 - Dapatkan `BOT TOKEN`
 
 ### 2. ➕ Tambahkan Bot ke Grup Telegram
+
 - Tambahkan ke grup
 - Jadikan **admin**
 - Nonaktifkan privacy mode:  
   `/mybots → pilih bot → Bot Settings → Group Privacy → Turn Off`
 
 ### 3. 🆔 Dapatkan Chat ID Grup
+
 - Kirim pesan di grup
 - Buka:  
   `https://api.telegram.org/bot<BOT_TOKEN>/getUpdates`
@@ -83,9 +86,9 @@ cd telegram-auto-post
 
 ### 5. 🔐 Tambahkan Secrets ke GitHub
 
-| Name                 | Value                            |
-|----------------------|----------------------------------|
-| `TELEGRAM_BOT_TOKEN` | dari @BotFather                  |
+| Name                 | Value                             |
+| -------------------- | --------------------------------- |
+| `TELEGRAM_BOT_TOKEN` | dari @BotFather                   |
 | `TELEGRAM_CHAT_ID`   | ID grup, contoh: `-1001234567890` |
 
 ### 6. ✅ Pastikan Struktur File
@@ -99,12 +102,14 @@ cd telegram-auto-post
 ```
 
 ### 7. 🚀 Jalankan Workflow Manual
+
 - Buka tab **Actions** di GitHub
 - Pilih: **"Kirim Berita Tiap Hari"**
 - Klik tombol **Run workflow**
 
 ### 8. 🔄 Otomatis Setiap Hari
-- GitHub akan menjalankan bot tiap jam **09:00 WIB**  
+
+- GitHub akan menjalankan bot tiap jam **09:00 WIB**
 - Tidak perlu VPS, PC nyala, atau cron job manual
 
 ---
@@ -138,6 +143,7 @@ Powered by **Python**, **GitHub Actions**, and the **Telegram Bot API**
 
 ---
 
-## 📎 License
+## 🙋‍♂️ Author
 
-MIT — silakan gunakan, modifikasi, dan sebarkan bot ini untuk komunitas kamu.
+Created and maintained by [@elnasio](https://www.linkedin.com/in/moriesdeohutapea)  
+Feel free to connect or give credit when you use or fork this project 🙌
