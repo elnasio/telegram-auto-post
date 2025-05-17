@@ -1,0 +1,28 @@
+name: Kirim Berita Tiap Hari
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # Setiap hari jam 09:00 WIB (karena GitHub pakai UTC)
+  workflow_dispatch:
+
+jobs:
+  post-to-telegram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout kode
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Jalankan auto_post.py
+        run: python auto_post.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
