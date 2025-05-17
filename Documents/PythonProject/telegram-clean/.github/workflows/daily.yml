@@ -2,20 +2,25 @@ name: Kirim Berita Tiap Hari
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 2 * * *" # 09:00 WIB (UTC+7)
   workflow_dispatch:
 
 jobs:
   post-to-telegram:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout kode repo
+        uses: actions/checkout@v3
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
+
       - name: Install requests
         run: pip install requests
+
       - name: Jalankan auto_post.py
         run: python auto_post.py
         env:
